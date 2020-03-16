@@ -1,0 +1,46 @@
+scopeName: 'source.reconn'
+name: 'Reconn'
+fileTypes: [ 'rcn' ]
+limitLineLength: false
+
+patterns: [
+  {
+    comment: ''
+    name: 'storage.reconn'
+    match: '\\b(def)\\b'
+  }
+  {
+    comment: ''
+    name: 'storage.reconn'
+    match: '\\b(end)\\b'
+  }
+  {
+    comment: ''
+    name: 'string.quoted.single.reconn'
+    match: '\".*?\"'
+  }
+  {
+    comment: ''
+    name: 'constant.numeric.reconn'
+    match: '[+-]?\\d+'
+  }
+  {
+    comment: ''
+    name: 'constant.other.reconn'
+    match: '\'\\S+'
+  }
+  { include: '#blockComment' }
+]
+
+repository:
+  blockComment: {
+    name: 'meta.section.example'
+    contentName: 'comment.line.reconn'
+    begin: '\\(($| )'
+    beginCaptures:
+      0: name: 'comment.line.reconn'
+    end: '(^| )\\)'
+    endCaptures:
+      0: name: 'comment.line.reconn'
+    patterns: [{ include: '#blockComment' }]
+  }
