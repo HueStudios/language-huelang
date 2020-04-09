@@ -27,7 +27,7 @@ patterns: [
   {
     comment: ''
     name: 'constant.other.reconn'
-    match: '\'\\S+'
+    match: ':\\S+'
   }
   { include: '#blockComment' }
 ]
