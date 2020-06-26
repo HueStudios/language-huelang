@@ -1,1 +1,1 @@
-atom-language-reconn-prototype
+Atom support for HueLang

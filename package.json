@@ -1,11 +1,13 @@
 {
-  "name": "language-reconn-prototype",
-  "version": "0.0.1",
-  "description": "A test package for recon syntax",
+  "name": "language-huelang",
+  "version": "0.0.0",
+  "description": "Language support for HueLang",
   "keywords": [
     "syntax",
     "highlighting",
-    "grammar"
+    "grammar",
+    "huelang",
+    "huestudios"
   ],
   "license": "MIT",
   "engines": {

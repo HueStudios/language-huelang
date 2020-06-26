@@ -1,0 +1,52 @@
+scopeName: 'source.huelang'
+name: 'HueLang'
+fileTypes: [ 'hue' ]
+limitLineLength: false
+
+patterns: [
+  {
+    comment: ''
+    name: 'keyword.control.huelang'
+    match: '(\\s|)\\[(\\s|)'
+  }
+  {
+    comment: ''
+    name: 'keyword.control.huelang'
+    match: '(\\s|)\\](\\s|)'
+  }
+  {
+    comment: ''
+    name: 'meta.array.huelang'
+    match: '(\\s|)\\((\\s|)'
+  }
+  {
+    comment: ''
+    name: 'meta.array.huelang'
+    match: '(\\s|)\\((\\s|)'
+  }
+  {
+    comment: ''
+    name: 'string.quoted.single.huelang'
+    match: '(\\s|)"((\\s).*?(\\s)|\\s)"(\\s|)'
+  }
+  {
+    comment: ''
+    name: 'constant.numeric.huelang'
+    match: '(\\s|)\\d+(\\s|)'
+  }
+  {
+    comment: ''
+    name: 'constant.other.huelang'
+    match: '(\\s|):\\S+(\\s|)'
+  }
+  {
+    comment: ''
+    name: 'entity.huelang'
+    match: '(\\s|)#\\S+(\\s|)'
+  }
+  {
+    comment: ''
+    name: 'comment.line.huelang'
+    match: '(\\s|)\\{((\\s+).*?(\\s+)|\\s)\\}(\\s|)'
+  }
+]
