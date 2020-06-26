@@ -57,16 +57,19 @@ patterns: [
   { include: '#blockComment' }
 ]
 
-
 repository:
   blockComment: {
-    name: 'meta.section.example'
-    contentName: 'comment.line.huelang'
-    begin: '(\\s|)\\((\\s|)'
-    beginCaptures:
-      0: name: 'comment.line.huelang'
-    end: '(\\s|)\\)(\\s|)'
-    endCaptures:
-      0: name: 'comment.line.huelang'
-    patterns: [{ include: '#blockComment' }]
+    patterns: [
+      {
+        begin: '(\\s|)\\((\\s|)'
+        beginCaptures:
+          0:
+            name: 'punctuation.definition.comment.begin.huelang'
+        end: '(\\s|)\\)(\\s|)'
+        endCaptures:
+          0:
+            name: 'punctuation.definition.comment.end.huelang'
+        name: 'comment.block.huelang'
+      }
+    ]
   }
