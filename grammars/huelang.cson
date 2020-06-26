@@ -16,13 +16,13 @@ patterns: [
   }
   {
     comment: ''
-    name: 'meta.array.huelang'
-    match: '(\\s|)\\((\\s|)'
+    name: 'constant.language.huelang'
+    match: '(\\s|)\\{(\\s|)'
   }
   {
     comment: ''
-    name: 'meta.array.huelang'
-    match: '(\\s|)\\((\\s|)'
+    name: 'constant.language.huelang'
+    match: '(\\s|)\\}(\\s|)'
   }
   {
     comment: ''
@@ -41,12 +41,32 @@ patterns: [
   }
   {
     comment: ''
-    name: 'entity.huelang'
+    name: 'meta.function-call.huelang'
+    match: '(\\s|)\\S+(\\s|)'
+  }
+  {
+    comment: ''
+    name: 'meta.preprocessor.huelang'
     match: '(\\s|)#\\S+(\\s|)'
   }
   {
     comment: ''
     name: 'comment.line.huelang'
-    match: '(\\s|)\\{((\\s+).*?(\\s+)|\\s)\\}(\\s|)'
+    match: '(\\s|)\\(((\\s+).*?(\\s+)|\\s)\\)(\\s|)'
   }
+  { include: '#blockComment' }
 ]
+
+
+repository:
+  blockComment: {
+    name: 'meta.section.example'
+    contentName: 'comment.line.reconn'
+    begin: '(\\s|)\\((\\s|)'
+    beginCaptures:
+      0: name: 'comment.line.reconn'
+    end: '(\\s|)\\)(\\s|)'
+    endCaptures:
+      0: name: 'comment.line.reconn'
+    patterns: [{ include: '#blockComment' }]
+  }
