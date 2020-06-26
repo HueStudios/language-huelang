@@ -4,30 +4,27 @@ fileTypes: [ 'hue' ]
 limitLineLength: false
 
 patterns: [
+  { include: '#blockComment' }
+  { include: '#stringBlock' }
   {
     comment: ''
-    name: 'keyword.control.huelang'
+    name: 'storage.huelang'
     match: '(\\s|)\\[(\\s|)'
   }
   {
     comment: ''
-    name: 'keyword.control.huelang'
+    name: 'storage.huelang'
     match: '(\\s|)\\](\\s|)'
   }
   {
     comment: ''
-    name: 'constant.language.huelang'
+    name: 'constant.huelang'
     match: '(\\s|)\\{(\\s|)'
   }
   {
     comment: ''
-    name: 'constant.language.huelang'
+    name: 'constant.huelang'
     match: '(\\s|)\\}(\\s|)'
-  }
-  {
-    comment: ''
-    name: 'string.quoted.single.huelang'
-    match: '(\\s|)"((\\s).*?(\\s)|\\s)"(\\s|)'
   }
   {
     comment: ''
@@ -41,20 +38,14 @@ patterns: [
   }
   {
     comment: ''
-    name: 'meta.function-call.huelang'
-    match: '(\\s|)\\S+(\\s|)'
-  }
-  {
-    comment: ''
-    name: 'meta.preprocessor.huelang'
+    name: 'support.function.huelang'
     match: '(\\s|)#\\S+(\\s|)'
   }
   {
     comment: ''
-    name: 'comment.line.huelang'
-    match: '(\\s|)\\(((\\s+).*?(\\s+)|\\s)\\)(\\s|)'
+    name: 'entity.name.function.huelang'
+    match: '(\\s|)\\S+(\\s|)'
   }
-  { include: '#blockComment' }
 ]
 
 repository:
@@ -70,6 +61,21 @@ repository:
           0:
             name: 'punctuation.definition.comment.end.huelang'
         name: 'comment.block.huelang'
+      }
+    ]
+  }
+  stringBlock: {
+    patterns: [
+      {
+        begin: '(\\s|)\\"(\\s|)'
+        beginCaptures:
+          0:
+            name: 'string.start.huelang'
+        end: '(\\s|)\\"(\\s|)'
+        endCaptures:
+          0:
+            name: 'string.end.huelang'
+        name: 'string.block.huelang'
       }
     ]
   }
